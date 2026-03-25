@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Greetings</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sour+Gummy:wght@600;900&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container d-flex justify-content-center">
+        <div class="card p-3 p-md-5 birthday-card border-0">
+    <div class="card-header bg-transparent border-bottom-0">
+        <h1 class="text-uppercase card-title text-center main-title">These are for you</h1>
+        <h3 class="text-center fw-light card-subtitle text-capitalize sub-title mt-2">click to see what i got for you</h3>
+    </div>
+    
+    <div class="card-body mt-3">
+        <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+
+            <div class="gift-card" role="button" id="musicBtn" data-bs-toggle="modal" data-bs-target="#musicModal">
+                <img src="/images/music.png" width="100" height="auto" alt="Music">
+            </div>
+            
+            <div class="gift-card" role="button" id="cameraBtn" data-bs-toggle="modal" data-bs-target="#cameraModal">
+                <img src="/images/camera.png" width="100" height="auto" alt="Camera">
+            </div>
+
+            <div class="gift-card" role="button" id="envelopeBtn" data-bs-toggle="modal" data-bs-target="#envelopeModal">
+                <img src="/images/envelope.png" width="100" height="auto" alt="Envelope">
+            </div>
+
+        </div>
+    </div>
+</div>
+    </div>
+
+<!--Music Player-->
+<div class="modal fade" id="musicModal" tabindex="-1" aria-labelledby="musicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    
+    <div class="modal-content glass-modal border-0">
+      
+      <div class="modal-header border-0 pb-0 justify-content-end position-relative mt-3">
+        <button type="button" class="btn-close custom-close position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-4 p-md-5 pt-0">
+        <div class="row align-items-center">
+            
+          <div class="col-md-6 mb-4 mb-md-0 d-flex justify-content-center">
+              <img src="/images/happybirthday.gif" alt="Vibing GIF" class="img-fluid gif-display">
+          </div>
+
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            
+            <h2 class="track-title main-title mb-1 text-center">Shape of My Heart</h2>
+            <p class="track-artist sub-title mb-4 text-center">Dedicated to Angel</p>
+
+            <div class="custom-progress-container w-100 px-3 mb-4">
+                <div class="d-flex justify-content-between text-muted small mb-1 time-labels">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">3:45</span>
+                </div>
+                <div class="progress custom-progress-bar">
+                    <div class="progress-bar" id="musicProgressBar" role="progressbar" style="width: 30%"></div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center gap-4 player-controls mb-2">
+                <button class="btn btn-link ctrl-btn"><i class="bi bi-skip-backward-fill"></i></button>
+                
+                <button class="btn play-pause-btn" id="modalPlayPauseBtn">
+                    <i class="bi bi-play-fill" id="playPauseIcon"></i>
+                </button>
+                
+                <button class="btn btn-link ctrl-btn"><i class="bi bi-skip-forward-fill"></i></button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Photos-->
+<div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="cameraModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    
+    <div class="modal-content glass-modal border-0">
+      
+      <div class="modal-header border-0 pb-0 justify-content-center position-relative mt-3">
+        <h1 class="modal-title main-title fs-1" id="cameraModalLabel">Captured Moments</h1>
+        <button type="button" class="btn-close custom-close position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body custom-scrollbar p-5">
+        <div class="row g-4 justify-content-center">
+          
+          <div class="col-md-4 col-sm-6">
+            <div class="polaroid polaroid-tilt-left">
+              <img src="https://picsum.photos/id/1011/400/400" alt="Memory 1" class="img-fluid">
+              <div class="caption">The first time we played</div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="polaroid">
+              <img src="https://picsum.photos/id/1025/400/400" alt="Memory 2" class="img-fluid">
+              <div class="caption">Midnight grinds</div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="polaroid polaroid-tilt-right">
+              <img src="https://picsum.photos/id/1062/400/400" alt="Memory 3" class="img-fluid">
+              <div class="caption">Game pictorials 📸</div>
+            </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+            <div class="polaroid polaroid-tilt-left">
+              <img src="https://picsum.photos/id/1084/400/400" alt="Memory 4" class="img-fluid">
+              <div class="caption">Always laughing</div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="polaroid polaroid-tilt-right">
+              <img src="https://picsum.photos/id/177/400/400" alt="Memory 5" class="img-fluid">
+              <div class="caption">Best duo</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Letter-->
+<div class="modal fade" id="envelopeModal" tabindex="-1" aria-labelledby="envelopeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content glass-modal border-0">
+      
+      <div class="modal-header border-0 pb-0 justify-content-end position-relative mt-3">
+        <button type="button" class="btn-close custom-close position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-4 p-md-5 pt-4">
+        <div class="stationery-paper">
+            <div class="row align-items-center h-100">
+                
+                <div class="col-md-4 text-center d-none d-md-block">
+                    <img src="/images/flowers.png" alt="Flower Art" class="img-fluid flower-art">
+                </div>
+
+                <div class="col-md-8">
+                    <div class="handwritten-message">
+                        <h2 class="salutation">Dear Angel,</h2>
+                        
+                        <p class="letter-body">
+                            Even though you're out here forgetting my birthday, I couldn't let yours pass without doing something special. <br><br>
+                            I hope this little project makes you smile. Thank you for the late night games, the deep talks, and for just being you. <br><br>
+                            Take your time, I'm not in a rush. Happy Birthday.
+                        </p>
+
+                        <p class="sign-off text-end mt-4">
+                            Yours truly,<br>
+                            <span class="signature">Raniel</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</body>
+</html>
